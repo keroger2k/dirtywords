@@ -5,8 +5,8 @@ Dirty Word Configuration Tool
 
 
 Version: 0.01 - Initial Scripting.  
-Version: 0.02 - Based on feedback from Aaron have added escape sequence for '//'.  
-				Changed '//' to appear as '\/\/' for regular expression engine to parse correctly.
-Version: 0.03 - Added functionality to input vdom based on the fact all vdom's maintain their 
- 				own dirty 'xmpp' dirty word list.  Also changed the starting integer to 1 because fortigate is not zero based index for dirty words.
+
+Version: 0.02 - Based on feedback from Aaron have added escape sequence for '//'.  Changed '//' to appear as '\/\/' for regular expression engine to parse correctly.
+
+Version: 0.03 - Added functionality to input vdom based on the fact all vdom's maintain their own dirty 'xmpp' dirty word list.  Also changed the starting integer to 1 because fortigate is not zero based index for dirty words.
 				
