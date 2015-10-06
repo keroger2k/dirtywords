@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Dirty Word Configuration Tool
+	</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body >
+	<div class="container">
+		<div>
+			<h1>Dirty Word Configuration Tool <span style="font-size: .3em; color:gray;">(v0.03)</span></h1>
+			<p class="lead">Use this tool to create a Fortigate Firewall Configuration File for Dirty Word Search.</p>
+			<ol>
+				<li>INPUT: Comma Seperated Values (CSV) File containing a list of dirty words.
+				<div><i>e.g. "dirty1,dirty2,dirty3,dirty4"</i></div>
+				<div><i>words containing '//' will be escaped with '\/\/'</i></div>
+				</li>
+				<li>Enter the starting integer from the existing configuration.  
+					<div><i>For example if your last rule is 100, enter 101.</i></div>
+				</li>
+				<li>Enter the Virtual Domain to create dirty word list.  
+					<div><i>Every VDOM has a unique dirty word list and must be maintained individually</i></div></li>
+				<li>Copy and Paste entire list of dirty words into text box below</li>
+				<li>Click Create to generate a configuration that can be utilized by the fortigate firewall to identify dirty words in XMPP traffic.</li>
+				<li>Copy output results into a text file and import into Fortigate CLI via the console port, ssh, or the web based utility.</li>
+			</ol>
+		</div>
+		<hr/>
+		<div>
+			<h2>Input:</h2>
+			<h5>
+				<label for="starting-integer">Starting Interger:</label>
+				<input id="starting-integer" type="number" min="0" value="1" /></h5>
+			<h5>
+				<label for="vdom-name">Virtual Domain:</label>
+				<input id="vdom-name" type="text" /></h5>
+				<textarea id="dirty-word-text" rows="10" cols="150"></textarea>
+				<button class="btn btn-primary" id="btn-create">Create</button>
+		</div>
+		<hr/>
+		<div>
+			<h2 style="display:inline;">Output: </h2><div class="pull-right" id="execution-time" style="font-size: .8em; color: gray;"></div>
+			<div id="output-container" style="border:1px solid gray;"></div>
+		</div>
+	</div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
